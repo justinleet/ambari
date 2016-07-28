@@ -24,3 +24,6 @@ ambari-metrics/ambari-metrics-host-monitoring/src/main/python/psutil/build/
 rebel.xml
 rebel-remote.xml
 out
+# TODO Remote these two
+*.hash
+archive.zip
