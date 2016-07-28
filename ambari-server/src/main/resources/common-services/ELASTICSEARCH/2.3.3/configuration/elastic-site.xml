@@ -13,18 +13,18 @@
     <!--TODO - REMOVE HARDCODED SEEDS!!!!-->
     <property>
         <name>seed_node1</name>
-        <value>amb2.service.consul</value>
+        <value>amb1.service.consul</value>
         <description>Seed node -1</description>
     </property>
     <property>
         <name>seed_node2</name>
-        <value>amb3.service.consul</value>
+        <value>amb2.service.consul</value>
         <description>Seed node -2</description>
     </property>
     <property>
         <name>seed_node3</name>
-        <value>amb4.service.consul</value>
-        <description>Seed node -3 </description>
+        <value>amb3.service.consul</value>
+        <description>Seed node -3</description>
     </property>
     <property>
         <name>index_number_of_shards</name>
@@ -45,12 +45,12 @@
     <!--  Discovery -->
     <property>
         <name>transport_tcp_port</name>
-        <value>9300</value>
+        <value>9300-9400</value>
         <description>Set a custom port for the node to node communication</description>
     </property>
     <property>
         <name>http_port</name>
-        <value>9200</value>
+        <value>9200-9300</value>
         <description>Set a custom port to listen for HTTP traffic</description>
     </property>
     <!--  Discovery -->
@@ -171,7 +171,7 @@
     </property>
     <property>
         <name>network_host</name>
-        <value>eth0</value>
-        <description>Network interface will bind to</description>
+        <value>_lo_,_eth0_</value>
+        <description>Network interface(s) will bind to. </description>
     </property>
 </configuration>

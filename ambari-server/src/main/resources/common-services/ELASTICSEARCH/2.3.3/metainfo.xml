@@ -45,11 +45,18 @@
                         <scriptType>PYTHON</scriptType>
                         <timeout>600</timeout>
                     </commandScript>
-                    <configFile>
-                        <type>xml</type>
-                        <fileName>elastic-site.xml</fileName>
-                        <dictionaryName>elastic-site</dictionaryName>
-                    </configFile>
+                    <!--<configFile>-->
+                    <!--<type>xml</type>-->
+                    <!--<fileName>elastic-site.xml</fileName>-->
+                    <!--<dictionaryName>elastic-site</dictionaryName>-->
+                    <!--</configFile>-->
+                    <!--<configFiles>-->
+                        <!--<configFile>-->
+                            <!--<type>env</type>-->
+                            <!--<fileName>elastic-sysconfig.sh</fileName>-->
+                            <!--<dictionaryName>hadoop-env</dictionaryName>-->
+                        <!--</configFile>-->
+                    <!--</configFiles>-->
                 </component>
             </components>
             <osSpecifics>
@@ -68,8 +75,8 @@
                 <timeout>300</timeout>
             </commandScript>
             <configuration-dependencies>
-                  <config-type>elastic-env</config-type>
-                  <config-type>elastic-site</config-type>
+                <config-type>elastic-env</config-type>
+                <config-type>elastic-site</config-type>
             </configuration-dependencies>
             <restartRequiredAfterChange>true</restartRequiredAfterChange>
         </service>

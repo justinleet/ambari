@@ -16,8 +16,6 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-elasticsearch service params.
-
 """
 
 from resource_management.core.resources.system import Directory
@@ -38,6 +36,7 @@ def elastic():
     directories = directories + data_path
 
     Directory(directories,
+              create_parents=True,
               # recursive=True,
               mode=0755,
               owner=params.elastic_user,
