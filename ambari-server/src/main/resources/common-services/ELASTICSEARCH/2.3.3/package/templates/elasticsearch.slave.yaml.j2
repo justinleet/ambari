@@ -23,6 +23,7 @@ cluster:
     allocation.disk.watermark.low: {{cluster_routing_allocation_disk_watermark_low}}
     allocation.disk.threshold_enabled: {{cluster_routing_allocation_disk_threshold_enabled}}
     allocation.disk.watermark.high: {{cluster_routing_allocation_disk_watermark_high}}
+
 discovery:
   zen:
     ping:
@@ -39,7 +40,9 @@ node:
   name: {{hostname}}
 path:
   data: {{path_data}}
-  
+
+http.cors.enabled: true
+
 port: {{http_port}}
 
 transport:

@@ -13,17 +13,17 @@
     <!--TODO - REMOVE HARDCODED SEEDS!!!!-->
     <property>
         <name>seed_node1</name>
-        <value>amb1.service.consul</value>
+        <value>172.17.0.3:9300</value>
         <description>Seed node -1</description>
     </property>
     <property>
         <name>seed_node2</name>
-        <value>amb2.service.consul</value>
+        <value>172.17.0.4:9300</value>
         <description>Seed node -2</description>
     </property>
     <property>
         <name>seed_node3</name>
-        <value>amb3.service.consul</value>
+        <value>172.17.0.5:9300</value>
         <description>Seed node -3</description>
     </property>
     <property>
@@ -56,7 +56,7 @@
     <!--  Discovery -->
     <property>
         <name>discovery_zen_ping_multicast_enabled</name>
-        <value>false</value>
+        <value>true</value>
         <description>master eligible nodes</description>
     </property>
     <property>
@@ -95,7 +95,7 @@
     </property>
     <property>
         <name>expected_data_nodes</name>
-        <value>10</value>
+        <value>0</value>
         <description>expected_data_nodes</description>
     </property>
     <!--  Index -->  
@@ -111,7 +111,7 @@
     </property>
     <property>
         <name>index_refresh_interval</name>
-        <value>22</value>
+        <value>1s</value>
         <description>index refresh interval</description>
     </property>
     <property>
