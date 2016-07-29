@@ -36,39 +36,40 @@ class Elasticsearch(Script):
                 "enabled=1\" > /etc/yum.repos.d/elasticsearch.repo")
         self.install_packages(env)
 
-    def configure(self, env):
+    def configure(self, env, upgrade_type=None, config_dir=None):
         import params
         env.set_params(params)
         slave()
 
-    def stop(self, env):
+    def stop(self, env, upgrade_type=None):
         import params
         env.set_params(params)
         stop_cmd = format("service elasticsearch stop")
-        Execute(stop_cmd)
         print 'Stop the Slave'
+        Execute(stop_cmd)
 
-    def start(self, env):
+    def start(self, env, upgrade_type=None):
         import params
         env.set_params(params)
         self.configure(env)
         start_cmd = format("service elasticsearch start")
-        Execute(start_cmd)
         print 'Start the Slave'
+        Execute(start_cmd)
 
     def status(self, env):
         import params
         env.set_params(params)
         status_cmd = format("service elasticsearch status")
-        Execute(status_cmd)
         print 'Status of the Slave'
+        Execute(status_cmd)
 
     def restart(self, env):
         import params
         env.set_params(params)
         restart_cmd = format("service elasticsearch restart")
-        print 'Restarting the Master'
+        print 'Restarting the Slave'
         Execute(restart_cmd)
+
 
 if __name__ == "__main__":
     Elasticsearch().execute()

@@ -38,20 +38,20 @@ class Elasticsearch(Script):
 
         self.install_packages(env)
 
-    def configure(self, env):
+    def configure(self, env, upgrade_type=None, config_dir=None):
         import params
         env.set_params(params)
 
         elastic()
 
-    def stop(self, env):
+    def stop(self, env, upgrade_type=None):
         import params
         env.set_params(params)
         stop_cmd = format("service elasticsearch stop")
         print 'Stop the Master'
         Execute(stop_cmd)
 
-    def start(self, env):
+    def start(self, env, upgrade_type=None):
         import params
         env.set_params(params)
 
