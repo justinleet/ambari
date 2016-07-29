@@ -35,10 +35,8 @@ class Elasticsearch(Script):
                 "gpgcheck=1\n"
                 "gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch\n"
                 "enabled=1\" > /etc/yum.repos.d/elasticsearch.repo")
-        Execute("yum -y install elasticsearch")
 
-        # TODO ACTUALLY FIGURE OUT HOW TO USE THIS WITH RPM
-        # self.install_packages(env)
+        self.install_packages(env)
 
     def configure(self, env):
         import params
@@ -69,6 +67,12 @@ class Elasticsearch(Script):
         print 'Status of the Master'
         Execute(status_cmd)
 
+    def restart(self, env):
+        import params
+        env.set_params(params)
+        restart_cmd = format("service elasticsearch restart")
+        print 'Restarting the Master'
+        Execute(restart_cmd)
 
 if __name__ == "__main__":
     Elasticsearch().execute()

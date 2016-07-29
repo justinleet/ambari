@@ -23,10 +23,14 @@ from resource_management.libraries.script import Script
 # server configurations
 config = Script.get_config()
 
-elastic_home = '/usr/share/elasticsearch/'
-elastic_bin = '/usr/share/elasticsearch/bin/'
+elastic_home = config['configurations']['elastic-sysconfig']['elastic_home']
+data_dir = config['configurations']['elastic-sysconfig']['data_dir']
+work_dir = config['configurations']['elastic-sysconfig']['work_dir']
+conf_dir = config['configurations']['elastic-sysconfig']['conf_dir']
+heap_size = config['configurations']['elastic-sysconfig']['heap_size']
+max_open_files = config['configurations']['elastic-sysconfig']['max_open_files']
+max_map_count = config['configurations']['elastic-sysconfig']['max_map_count']
 
-conf_dir = "/etc/elasticsearch/"
 elastic_user = config['configurations']['elastic-env']['elastic_user']
 user_group = config['configurations']['elastic-env']['user_group']
 log_dir = config['configurations']['elastic-env']['elastic_log_dir']
@@ -35,6 +39,7 @@ pid_file = '/var/run/elasticsearch/elasticsearch.pid'
 hostname = config['hostname']
 java64_home = config['hostLevelParams']['java_home']
 elastic_env_sh_template = config['configurations']['elastic-env']['content']
+sysconfig_template = config['configurations']['elastic-sysconfig']['content']
 
 cluster_name = config['configurations']['elastic-site']['cluster_name']
 seed_node1 = config['configurations']['elastic-site']['seed_node1']

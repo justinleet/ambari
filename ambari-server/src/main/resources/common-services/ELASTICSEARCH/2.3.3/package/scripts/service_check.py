@@ -21,7 +21,6 @@ from __future__ import print_function
 
 import sys
 
-from resource_management.core.resources.system import Execute
 from resource_management.libraries.script import Script
 
 

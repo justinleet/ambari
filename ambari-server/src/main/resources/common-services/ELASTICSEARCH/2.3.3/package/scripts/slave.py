@@ -57,11 +57,9 @@ def slave():
          group=params.elastic_user
          )
 
-    # TODO LOOK AT THIS
+    print "Master sysconfig: /etc/sysconfig/elasticsearch"
     File(format("/etc/sysconfig/elasticsearch"),
-         content=Template(
-             "elasticsearch.sysconfig.j2",
-             configurations=configurations),
          owner="root",
-         group="root"
+         group="root",
+         content=InlineTemplate(params.sysconfig_template)
          )

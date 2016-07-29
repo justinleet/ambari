@@ -77,6 +77,7 @@
             <configuration-dependencies>
                 <config-type>elastic-env</config-type>
                 <config-type>elastic-site</config-type>
+                <config-type>elastic-sysconfig</config-type>
             </configuration-dependencies>
             <restartRequiredAfterChange>true</restartRequiredAfterChange>
         </service>
