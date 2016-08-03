@@ -70,6 +70,7 @@ class Elasticsearch(Script):
     def restart(self, env):
         import params
         env.set_params(params)
+        self.configure(env)
         restart_cmd = format("service elasticsearch restart")
         print 'Restarting the Master'
         Execute(restart_cmd)

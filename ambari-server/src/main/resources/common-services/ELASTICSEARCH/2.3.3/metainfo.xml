@@ -26,7 +26,7 @@
             <components>
                 <component>
                     <name>ES_MASTER</name>
-                    <displayName>Elasticsearch Master</displayName>
+                    <displayName>Elasticsearch Master-Eligible Node</displayName>
                     <category>MASTER</category>
                     <cardinality>1+</cardinality>
                     <commandScript>
@@ -37,26 +37,14 @@
                 </component>
                 <component>
                     <name>ES_SLAVE</name>
-                    <displayName>Elasticsearch Slave</displayName>
+                    <displayName>Elasticsearch Data Node</displayName>
                     <category>SLAVE</category>
-                    <cardinality>1+</cardinality>
+                    <cardinality>0+</cardinality>
                     <commandScript>
                         <script>scripts/elastic_slave.py</script>
                         <scriptType>PYTHON</scriptType>
                         <timeout>600</timeout>
                     </commandScript>
-                    <!--<configFile>-->
-                    <!--<type>xml</type>-->
-                    <!--<fileName>elastic-site.xml</fileName>-->
-                    <!--<dictionaryName>elastic-site</dictionaryName>-->
-                    <!--</configFile>-->
-                    <!--<configFiles>-->
-                        <!--<configFile>-->
-                            <!--<type>env</type>-->
-                            <!--<fileName>elastic-sysconfig.sh</fileName>-->
-                            <!--<dictionaryName>hadoop-env</dictionaryName>-->
-                        <!--</configFile>-->
-                    <!--</configFiles>-->
                 </component>
             </components>
             <osSpecifics>

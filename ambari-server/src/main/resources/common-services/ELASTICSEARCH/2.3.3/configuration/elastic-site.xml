@@ -29,19 +29,9 @@
     </property>
     <!--TODO - REMOVE HARDCODED SEEDS!!!!-->
     <property>
-        <name>seed_node1</name>
-        <value>amb1.service.consul</value>
-        <description>Seed node -1</description>
-    </property>
-    <property>
-        <name>seed_node2</name>
-        <value>amb2.service.consul</value>
-        <description>Seed node -2</description>
-    </property>
-    <property>
-        <name>seed_node3</name>
-        <value>amb3.service.consul</value>
-        <description>Seed node -3</description>
+        <name>zen_discovery_ping_unicast_hosts</name>
+        <value>amb1.service.consul,amb2.service.consul,amb3.service.consul</value>
+        <description>Unicast discovery list of hosts to act as gossip routers, in comma separated format.</description>
     </property>
     <property>
         <name>index_number_of_shards</name>
@@ -73,37 +63,34 @@
     <!--  Discovery -->
     <property>
         <name>discovery_zen_ping_multicast_enabled</name>
-        <value>true</value>
+        <value>false</value>
         <description>master eligible nodes</description>
     </property>
     <property>
         <name>discovery_zen_ping_timeout</name>
-        <!--<value>3s</value>-->
-        <value>3</value>
-        <description>wait for ping responses for master discovery</description>
+        <value>3s</value>
+        <description>Wait for ping responses for master discovery</description>
     </property>
     <property>
         <name>discovery_zen_fd_ping_interval</name>
-        <!--<value>15s</value>-->
-        <value>15</value>
-        <description>wait for ping for cluster discovery</description>
+        <value>15s</value>
+        <description>Wait for ping for cluster discovery</description>
     </property>
     <property>
         <name>discovery_zen_fd_ping_timeout</name>
-        <!--<value>60s</value>-->
-        <value>60</value>
-        <description>wait for ping for cluster discovery</description>
+        <value>60s</value>
+        <description>Wait for ping for cluster discovery</description>
     </property>
     <property>
         <name>discovery_zen_fd_ping_retries</name>
         <value>5</value>
-        <description>number of ping retries before blacklisting</description>
+        <description>Number of ping retries before blacklisting</description>
     </property>
     <!--  Gateway -->
     <property>
-        <name>recover_after_data_nodes</name>
+        <name>gateway_recover_after_data_nodes</name>
         <value>3</value>
-        <description>recovery process after N nodes</description>
+        <description>Recover as long as this many data or master nodes have joined the cluster.</description>
     </property>
     <property>
         <name>recover_after_time</name>
@@ -122,7 +109,7 @@
         <description>index.merge.scheduler.max_thread_count</description>
     </property>
     <property>
-        <name>index_store_throttle_type</name>
+        <name>indices_memory_index_store_throttle_type</name>
         <value>none</value>
         <description>index_store_throttle_type</description>
     </property>
@@ -137,12 +124,12 @@
         <description>index_translog_flush_threshold_size</description>
     </property>
     <property>
-        <name>index_buffer_size</name>
-        <value>10</value>
+        <name>indices_memory_index_buffer_size</name>
+        <value>10%</value>
         <description>Percentage of heap used for write buffers</description>
     </property>
     <property>
-        <name>mlockall</name>
+        <name>bootstrap_mlockall</name>
         <value>true</value>
         <description>The third option on Linux/Unix systems only, is to use mlockall to try to lock the process address space into RAM, preventing any Elasticsearch memory from being swapped out</description>
     </property>
