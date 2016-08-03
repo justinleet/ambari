@@ -21,16 +21,14 @@
 
 <configuration supports_final="true">
     <!-- Configurations -->
-    <!--TODO - REMOVE HARDCODED NAME!!!!-->
     <property>
         <name>cluster_name</name>
-        <value>metron</value>
+        <value></value>
         <description>Cluster name identifies your cluster</description>
     </property>
-    <!--TODO - REMOVE HARDCODED SEEDS!!!!-->
     <property>
         <name>zen_discovery_ping_unicast_hosts</name>
-        <value>amb1.service.consul,amb2.service.consul,amb3.service.consul</value>
+        <value></value>
         <description>Unicast discovery list of hosts to act as gossip routers, in comma separated format.</description>
     </property>
     <property>
